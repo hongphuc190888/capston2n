@@ -1,0 +1,356 @@
+@import "./base/base";
+@import "./base/reset";
+@import "./components/details";
+@import "./helper/mixin";
+@import "./helper/variable";
+@import "./layout/footer";
+@import "./layout/header";
+
+.banner {
+  text-transform: uppercase;
+  .carousel-inner {
+    display: flex;
+  }
+  @media only screen and (max-width: 3000px) {
+    .carousel-caption {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      p:first-child {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: black;
+        font-weight: bold;
+      }
+
+      h1 {
+        color: rgb(102, 51, 111);
+        font-weight: bold;
+        font-size: 50px;
+        margin: 15px 0 10px 0;
+      }
+
+      p {
+        font-size: 15px;
+      }
+
+      button {
+        padding: 10px 30px;
+        @include styleBTN($color-bg-btn, white, $color-bg-btn-hover, black);
+      }
+    }
+  }
+  @media only screen and (max-width: 820px) {
+    .carousel-caption {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      p:first-child {
+        font-size: 5px;
+        margin-bottom: 0px;
+      }
+
+      h1 {
+        color: rgb(102, 51, 111);
+        font-weight: bold;
+        font-size: 10px;
+        margin: 5px 0 5px 0;
+      }
+
+      p {
+        font-size: 5px;
+      }
+
+      button {
+        @include stylebtnmobile(
+          8px,
+          8px,
+          3px,
+          $color-bg-btn,
+          white,
+          $color-bg-btn-hover
+        );
+      }
+    }
+  }
+}
+.category {
+  margin: $top 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  h3 {
+    font-size: $text-h3;
+  }
+  p {
+    font-size: 15px;
+  }
+
+  .category-image {
+    a {
+      text-align: center;
+
+      &:hover img {
+        transform: scale(1.1);
+      }
+    }
+
+    img {
+      width: 100%;
+      transition: ease 0.3s;
+    }
+  }
+}
+
+.products {
+  a {
+    text-decoration: none;
+  }
+  margin: $top 0;
+
+  .viewProducts {
+    text-align: center;
+    margin-top: 20px;
+    button {
+      padding: 10px 25px;
+      @include styleBTN($color-bg-btn, white, $color-bg-btn-hover, black);
+    }
+  }
+  .products-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    p {
+      font-size: 15px;
+    }
+    h3 {
+      font-size: $text-h3;
+    }
+  }
+  .tab-menu {
+    ul {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .card {
+    @include styleHoverImg(1.1);
+    .card-body {
+      h5 {
+        color: $color-bg-btn;
+        text-transform: uppercase;
+      }
+    }
+    .card-footer {
+      .start {
+        i {
+          color: #fbbf18;
+        }
+      }
+      button {
+        @include styleBTNCart($color-bg-btn, white, $color-bg-btn-hover, black);
+      }
+    }
+  }
+}
+.listProducts {
+  margin: $top 0;
+  a {
+    text-decoration: none;
+  }
+
+  .wrapper-card {
+    margin-top: 20px;
+    .card {
+      @include styleHoverImg(1.1);
+      cursor: pointer;
+    }
+  }
+  .btn {
+    padding: 5px 20px;
+    @include styleBTNCart($color-bg-btn, white, $color-bg-btn-hover, black);
+  }
+}
+// banner 2
+.banner2 {
+  margin: $top 0;
+  width: 100%;
+  .banner-item {
+    position: relative;
+    .banner2-title {
+      text-transform: uppercase;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      margin-left: 10px;
+      padding: 20px;
+      h4 {
+        font-weight: bold;
+        color: black;
+      }
+      p:first-child {
+        color: #fbbf18;
+        font-size: 10px;
+      }
+      p {
+        font-size: 15px;
+      }
+      color: white;
+      button {
+        padding: 5px 10px;
+        @include styleBTN($color-bg-btn, white, $color-bg-btn-hover, black);
+      }
+    }
+  }
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+// css detail
+.banner-detail {
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  img {
+    height: 200px;
+    object-fit: cover;
+
+    filter: grayscale(70%) blur(2px);
+  }
+  .banner-item {
+    position: relative;
+  }
+  .banner-details-title {
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+      &:hover {
+        color: #fbbf18;
+      }
+    }
+  }
+}
+
+// detailProducts
+.detailProducts {
+  margin: $top 0;
+  display: flex;
+  justify-content: center;
+  text-transform: capitalize;
+  align-items: center;
+
+  .detailProducts-left {
+    .detailProducts-left-item {
+      @include styleHoverImg(1);
+    }
+    margin-top: 10px;
+
+    img {
+      width: 90%;
+    }
+  }
+  .detailProducts-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+
+    h3 {
+      font-size: 35px;
+      margin-bottom: 30px;
+    }
+    p {
+      font-size: 12px;
+      font-weight: bold;
+      &:nth-child(3) {
+        font-size: 25px;
+      }
+      span {
+        margin-left: 10px;
+        color: #fbbf18;
+        font-size: 40px;
+      }
+      &:nth-child(4) {
+        font-size: 20px;
+      }
+    }
+
+    .btn-green {
+      @include btnColor(green);
+    }
+    .btn-blue {
+      @include btnColor(blue);
+    }
+    .btn-red {
+      @include btnColor(red);
+    }
+  }
+  .detailProducts-like {
+    margin-top: 40px;
+    text-align: center;
+    button {
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      @include styleBTN($color-bg-btn, white, $color-bg-btn-hover, black);
+    }
+    .like {
+      a {
+        text-decoration: none;
+        color: black;
+        i {
+          margin-right: 10px;
+        }
+      }
+      display: flex;
+      justify-content: space-between;
+    }
+    .number {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      .input-group {
+        justify-content: center;
+        align-items: center;
+
+        input {
+          &.form-control {
+            margin-bottom: 20px;
+            width: 100px;
+            outline: none;
+            padding: 9px 15px;
+          }
+        }
+      }
+    }
+  }
+  .detailProducts-ship {
+    margin-top: 20px;
+  }
+  .detailProducts-pay {
+    margin-top: 45px;
+  }
+}
