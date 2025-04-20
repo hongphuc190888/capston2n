@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     const filterButtons = document.querySelectorAll('.suggested-products .filter-nav .filter-btn');
     const productItems = document.querySelectorAll('.suggested-products .product-grid .product-item');
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const selectedFilter = this.dataset.filter;
 
             filterButtons.forEach(btn => btn.classList.remove('active'));
@@ -38,30 +38,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function () {
     const testimonialSwiper = new Swiper('.testimonial-swiper', {
-      direction: 'horizontal', 
-      loop: true,             
-      slidesPerView: 1,       
-      spaceBetween: 30,       
-      effect: 'slide',       
-  
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true, // Cho phép click vào chấm để chuyển slide
-      },
-  
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-  
-      keyboard: {
-          enabled: true,
-          onlyInViewport: false,
-      },
-    });
-  });
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        effect: 'slide',
 
-  document.addEventListener('DOMContentLoaded', function() {
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true, // Cho phép click vào chấm để chuyển slide
+        },
+
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+        },
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
     const faqItems = document.querySelectorAll('.faq-accordion .faq-item');
 
     if (!faqItems.length) {
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!questionButton || !answer) {
             console.warn('FAQ item is missing question button or answer div.', item);
-            return; 
+            return;
         }
 
         questionButton.addEventListener('click', () => {
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     const newsSwiper = new Swiper('.news-swiper', {
-        loop: false, 
+        loop: false,
         slidesPerView: 1,
         spaceBetween: 15, // Adjust space between cards
 
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         breakpoints: {
             640: {
-                slidesPerView: 2,
+                slidesPerView: 1,
                 spaceBetween: 20
             },
             992: {
