@@ -1,0 +1,28 @@
+header {
+  .navbar {
+    padding: 30px 0;
+    .navbar-toggler-icon {
+      background-color: white;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  .navbar-brand {
+    color: $color-bg-btn;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .btn-header {
+    button {
+      width: fit-content;
+      @include styleBTNCart($color-bg-btn, white, $color-bg-btn-hover, black);
+    }
+  }
+  .dropdown-menu {
+    position: absolute;
+    transform: translateX(-15%);
+    transition: all 0.3s;
+  }
+}
