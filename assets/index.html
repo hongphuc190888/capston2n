@@ -10,7 +10,7 @@
     <!-- <link rel="stylesheet" href="../css/style.css" /> -->
 
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
@@ -38,15 +38,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
 <body>
-  <header class="">
+    <header class="">
         <nav class="navbar  navbar-expand-lg bg-black">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Sneakers</a>
@@ -144,18 +144,17 @@
                         </button>
                     </form>
                     <!-- Modal -->
+                    <!-- Modal -->
                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header ">
-
                                     <h1 class="modal-title fs-5 " id="staticBackdropLabel">
                                         Đăng Nhập / Đăng
                                         Ký</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
-
                                 </div>
                                 <div class="modal-body ">
                                     <!-- Pills content -->
@@ -167,14 +166,16 @@
                                                 aria-controls="nav-home" aria-selected="true">Login</button>
                                             <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
                                                 data-bs-target="#nav-profile" type="button" role="tab"
-                                                aria-controls="nav-profile" aria-selected="false">Sign in</button>
-
+                                                aria-controls="nav-profile" aria-selected="false">Sign up</button>
+                                            <!-- Changed text to "Sign up" for registration tab -->
                                         </div>
                                     </nav>
                                     <div class="tab-content" id="nav-tabContent">
+                                        <!-- Login Tab -->
                                         <div class="tab-pane fade show active " id="nav-home" role="tabpanel"
                                             aria-labelledby="nav-home-tab" tabindex="0">
-                                            <form>
+                                            <form id="loginForm" novalidate>
+                                                <!-- Added id="loginForm" and novalidate -->
                                                 <div class="text-center mb-3">
                                                     <p>Sign in with:</p>
                                                     <button type="button" data-mdb-button-init data-mdb-ripple-init
@@ -200,18 +201,26 @@
 
                                                 <p class="text-center">or:</p>
 
-                                                <!-- Email input -->
+                                                <!-- Email or Username input -->
                                                 <div data-mdb-input-init class="form-outline mb-4">
-                                                    <input type="email" id="loginName" class="form-control" />
+                                                    <input type="text" id="loginName" class="form-control" required />
+                                                    <!-- Changed type to text, added required -->
                                                     <label class="form-label" for="loginName">Email or
                                                         username</label>
+                                                    <div class="invalid-feedback" id="loginNameFeedback"></div>
+                                                    <!-- ADD THIS -->
                                                 </div>
+
 
                                                 <!-- Password input -->
                                                 <div data-mdb-input-init class="form-outline mb-4">
-                                                    <input type="password" id="loginPassword" class="form-control" />
+                                                    <input type="password" id="loginPassword" class="form-control"
+                                                        required /> <!-- Added required -->
                                                     <label class="form-label" for="loginPassword">Password</label>
+                                                    <div class="invalid-feedback" id="loginPasswordFeedback"></div>
+                                                    <!-- ADD THIS -->
                                                 </div>
+
 
                                                 <!-- 2 column grid layout -->
                                                 <div class="row mb-4">
@@ -224,7 +233,6 @@
                                                                 Remember me </label>
                                                         </div>
                                                     </div>
-
                                                     <div class="col-md-6 d-flex justify-content-center">
                                                         <!-- Simple link -->
                                                         <a href="#!">Forgot password?</a>
@@ -243,10 +251,11 @@
                                             </form>
                                         </div>
 
+                                        <!-- Register Tab -->
                                         <div class="tab-pane fade" id="nav-profile" role="tabpanel"
                                             aria-labelledby="nav-profile-tab" tabindex="0">
-
-                                            <form>
+                                            <form id="registerForm" novalidate>
+                                                <!-- Added id="registerForm" and novalidate -->
                                                 <div class="text-center mb-3">
                                                     <p>Sign up with:</p>
                                                     <button type="button" data-mdb-button-init data-mdb-ripple-init
@@ -274,69 +283,77 @@
 
                                                 <!-- Name input -->
                                                 <div data-mdb-input-init class="form-outline mb-4">
-                                                    <input type="text" id="registerName" class="form-control" />
+                                                    <input type="text" id="registerName" class="form-control"
+                                                        required /> <!-- Added required -->
                                                     <label class="form-label" for="registerName">Name</label>
+                                                    <div class="invalid-feedback" id="registerNameFeedback"></div>
+                                                    <!-- ADD THIS -->
                                                 </div>
 
                                                 <!-- Username input -->
                                                 <div data-mdb-input-init class="form-outline mb-4">
-                                                    <input type="text" id="registerUsername" class="form-control" />
+                                                    <input type="text" id="registerUsername" class="form-control"
+                                                        required /> <!-- Added required -->
                                                     <label class="form-label" for="registerUsername">Username</label>
+                                                    <div class="invalid-feedback" id="registerUsernameFeedback"></div>
+                                                    <!-- ADD THIS -->
                                                 </div>
 
                                                 <!-- Email input -->
                                                 <div data-mdb-input-init class="form-outline mb-4">
-                                                    <input type="email" id="registerEmail" class="form-control" />
+                                                    <input type="email" id="registerEmail" class="form-control"
+                                                        required /> <!-- Added required -->
                                                     <label class="form-label" for="registerEmail">Email</label>
+                                                    <div class="invalid-feedback" id="registerEmailFeedback"></div>
+                                                    <!-- ADD THIS -->
                                                 </div>
 
                                                 <!-- Password input -->
                                                 <div data-mdb-input-init class="form-outline mb-4">
-                                                    <input type="password" id="registerPassword" class="form-control" />
+                                                    <input type="password" id="registerPassword" class="form-control"
+                                                        required /> <!-- Added required -->
                                                     <label class="form-label" for="registerPassword">Password</label>
+                                                    <div class="invalid-feedback" id="registerPasswordFeedback"></div>
+                                                    <!-- ADD THIS -->
                                                 </div>
 
                                                 <!-- Repeat Password input -->
                                                 <div data-mdb-input-init class="form-outline mb-4">
                                                     <input type="password" id="registerRepeatPassword"
-                                                        class="form-control" />
+                                                        class="form-control" required /> <!-- Added required -->
                                                     <label class="form-label" for="registerRepeatPassword">Repeat
                                                         password</label>
+                                                    <div class="invalid-feedback" id="registerRepeatPasswordFeedback">
+                                                    </div> <!-- ADD THIS -->
                                                 </div>
 
                                                 <!-- Checkbox -->
                                                 <div class="form-check d-flex justify-content-center mb-4">
                                                     <input class="form-check-input me-2" type="checkbox" value=""
-                                                        id="registerCheck" checked
+                                                        id="registerCheck" required
                                                         aria-describedby="registerCheckHelpText" />
+                                                    <!-- Added required -->
                                                     <label class="form-check-label" for="registerCheck">
                                                         I have read and agree to the terms
                                                     </label>
                                                 </div>
+                                                <div class="invalid-feedback" id="registerCheckFeedback"
+                                                    style="text-align: center; margin-top: -10px; margin-bottom: 10px;">
+                                                </div> <!-- ADD THIS (placed below form-check div and centered) -->
+
 
                                                 <!-- Submit button -->
                                                 <button type="submit" data-mdb-button-init data-mdb-ripple-init
                                                     class="btn btn-primary btn-block mb-3">Sign
-                                                    in</button>
+                                                    up</button> <!-- Changed text to "Sign up" -->
                                             </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Pills content -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Understood</button>
-                            </div>
                         </div>
-
                     </div>
                 </div>
-            </div>
-
-
-            </div>
-            </div>
         </nav>
     </header>
     <section class="banner ">
@@ -477,7 +494,7 @@
                     </li>
                 </ul>
             </div>
-<!-- shop all -->
+            <!-- shop all -->
             <div class="tab-content mt-3">
                 <div class="tab-pane  fade show active" id="shopall">
 
@@ -1193,7 +1210,8 @@
                 <h2>MOST POPULAR BRANDS
                 </h2>
                 <p>Sagittis vitae et leo duis ut diam quam nulla. In eu mi bibendum neque egestas congue quisque.
-                    <br>Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien.</p>
+                    <br>Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien.
+                </p>
             </div>
             <div class="brands-grid">
                 <div class="brand-item">
@@ -1247,9 +1265,9 @@
                     <button type="button" class="filter-btn" data-filter="boots">Boots</button>
                 </nav>
             </div>
-    
+
             <div class="product-grid">
-                <div class="product-item" data-category="sneakers"> 
+                <div class="product-item" data-category="sneakers">
                     <div class="product-image">
                         <img src="./img/shoe03.2.png" alt="Sunlight Jogger Sneakers">
                     </div>
@@ -1267,7 +1285,7 @@
                         <p class="product-price">Rs. 45.00</p>
                     </div>
                 </div>
-                <div class="product-item" data-category="sneakers"> 
+                <div class="product-item" data-category="sneakers">
                     <div class="product-image">
                         <img src="./img/shoe03.2.png" alt="Sunlight Jogger Sneakers">
                     </div>
@@ -1285,7 +1303,7 @@
                         <p class="product-price">Rs. 45.00</p>
                     </div>
                 </div>
-                <div class="product-item" data-category="sneakers"> 
+                <div class="product-item" data-category="sneakers">
                     <div class="product-image">
                         <img src="./img/shoe03.2.png" alt="Sunlight Jogger Sneakers">
                     </div>
@@ -1303,7 +1321,7 @@
                         <p class="product-price">Rs. 45.00</p>
                     </div>
                 </div>
-                <div class="product-item" data-category="sneakers"> 
+                <div class="product-item" data-category="sneakers">
                     <div class="product-image">
                         <img src="./img/shoe03.2.png" alt="Sunlight Jogger Sneakers">
                     </div>
@@ -1321,7 +1339,7 @@
                         <p class="product-price">Rs. 45.00</p>
                     </div>
                 </div>
-                <div class="product-item" data-category="sneakers"> 
+                <div class="product-item" data-category="sneakers">
                     <div class="product-image">
                         <img src="./img/shoe03.2.png" alt="Sunlight Jogger Sneakers">
                     </div>
@@ -1339,7 +1357,7 @@
                         <p class="product-price">Rs. 45.00</p>
                     </div>
                 </div>
-                <div class="product-item" data-category="sneakers"> 
+                <div class="product-item" data-category="sneakers">
                     <div class="product-image">
                         <img src="./img/shoe03.2.png" alt="Sunlight Jogger Sneakers">
                     </div>
@@ -1362,7 +1380,7 @@
     </section>
 
     <section class="testimonial-section">
-        <div class="background-overlay"></div> 
+        <div class="background-overlay"></div>
         <div class="container">
             <!-- Slider main container -->
             <div class="swiper testimonial-swiper">
@@ -1381,7 +1399,9 @@
                                 </div>
                             </div>
                             <blockquote class="testimonial-quote">
-                                Aliquet bibendum enim facilisis gravida neque convallis. Condsodales neque. Duis at tellus at urna condimentum mattis pellentesque. Dolor sed viverra ipsum nunc aliquet bibendum. Magna ac placerat vestibulum.
+                                Aliquet bibendum enim facilisis gravida neque convallis. Condsodales neque. Duis at
+                                tellus at urna condimentum mattis pellentesque. Dolor sed viverra ipsum nunc aliquet
+                                bibendum. Magna ac placerat vestibulum.
                             </blockquote>
                             <div class="author-info">
                                 <div class="author-avatar">
@@ -1401,10 +1421,10 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="swiper-slide">
                         <div class="testimonial-content">
-                             <div class="product-snippet">
+                            <div class="product-snippet">
                                 <div class="snippet-image">
                                     <img src="./img/shoe06.png" alt="Another Awesome Shoe">
                                 </div>
@@ -1414,7 +1434,9 @@
                                 </div>
                             </div>
                             <blockquote class="testimonial-quote">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                             </blockquote>
                             <div class="author-info">
                                 <div class="author-avatar">
@@ -1434,10 +1456,10 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="swiper-slide">
-                         <div class="testimonial-content">
-                             <div class="product-snippet">
+                        <div class="testimonial-content">
+                            <div class="product-snippet">
                                 <div class="snippet-image">
                                     <img src="./img/shoe12.png" alt="Yet Another Shoe">
                                 </div>
@@ -1447,7 +1469,9 @@
                                 </div>
                             </div>
                             <blockquote class="testimonial-quote">
-                               Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                officia deserunt mollit anim id est laborum.
                             </blockquote>
                             <div class="author-info">
                                 <div class="author-avatar">
@@ -1467,15 +1491,15 @@
                             </div>
                         </div>
                     </div>
-    
-                </div> 
-    
+
+                </div>
+
                 <div class="swiper-pagination"></div>
-    
+
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
-    
-            </div> 
+
+            </div>
         </div>
     </section>
 
@@ -1490,42 +1514,45 @@
                             <span>What sizes do you offer?</span>
                             <span class="faq-icon-container">
                                 <i class="fas fa-check icon-check"></i>
-                               
+
                             </span>
                         </button>
                         <div class="faq-answer" id="faq-answer-1" role="region" aria-hidden="true">
-                            <p>Feugiat sed lectus vestibulum mattis. Dui vivamus arcu felis bibendum. Aliquam faucibus tempor. Massa eget egestas purus viverra accumsan in.</p>
+                            <p>Feugiat sed lectus vestibulum mattis. Dui vivamus arcu felis bibendum. Aliquam faucibus
+                                tempor. Massa eget egestas purus viverra accumsan in.</p>
                         </div>
                     </div>
-    
+
                     <!-- Item 2 -->
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
                             <span>What is your return policy?</span>
-                             <span class="faq-icon-container">
+                            <span class="faq-icon-container">
                                 <i class="fas fa-check icon-check"></i>
                             </span>
                         </button>
                         <div class="faq-answer" id="faq-answer-2" role="region" aria-hidden="true">
-                            <p>Details about the return policy go here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p>Details about the return policy go here. Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit.</p>
                         </div>
                     </div>
-    
+
                     <!-- Item 3 -->
                     <div class="faq-item">
-                         <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
                             <span>How can I track my order?</span>
-                             <span class="faq-icon-container">
+                            <span class="faq-icon-container">
                                 <i class="fas fa-check icon-check"></i>
                             </span>
                         </button>
                         <div class="faq-answer" id="faq-answer-3" role="region" aria-hidden="true">
-                            <p>Instructions on how to track an order. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Instructions on how to track an order. Sed do eiusmod tempor incididunt ut labore et
+                                dolore magna aliqua.</p>
                         </div>
                     </div>
-    
-                     <!-- Item 4 -->
-                     <div class="faq-item">
+
+                    <!-- Item 4 -->
+                    <div class="faq-item">
                         <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
                             <span>Are your shoes made from sustainable materials?</span>
                             <span class="faq-icon-container">
@@ -1533,12 +1560,13 @@
                             </span>
                         </button>
                         <div class="faq-answer" id="faq-answer-4" role="region" aria-hidden="true">
-                            <p>Information about sustainability practices. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                            <p>Information about sustainability practices. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco.</p>
                         </div>
                     </div>
-    
-                     <!-- Item 5 -->
-                     <div class="faq-item">
+
+                    <!-- Item 5 -->
+                    <div class="faq-item">
                         <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
                             <span>How do I care for my shoes?</span>
                             <span class="faq-icon-container">
@@ -1546,24 +1574,25 @@
                             </span>
                         </button>
                         <div class="faq-answer" id="faq-answer-5" role="region" aria-hidden="true">
-                            <p>Shoe care instructions. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+                            <p>Shoe care instructions. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore.</p>
                         </div>
                     </div>
-    
-                </div> 
-    
+
+                </div>
+
                 <div class="faq-image-column">
                     <div class="image-container">
                         <img src="./img/Rectangle_81_1.png" alt="Stylish comfortable shoes">
-                         <div class="decorative-border"></div>
-                         <button class="play-button" aria-label="Play Video">
+                        <div class="decorative-border"></div>
+                        <button class="play-button" aria-label="Play Video">
                             <i class="fas fa-play"></i>
-                         </button>
+                        </button>
                     </div>
                 </div>
-            </div> 
-        </div> 
-    </section>    
+            </div>
+        </div>
+    </section>
 
     <section class="latest-news-section">
         <div class="container">
@@ -1571,11 +1600,13 @@
                 <h2 class="section-title">Latest News</h2>
                 <div class="header-right-content">
                     <p class="section-description">
-                        Ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet. Quis varius quam quisque id diam. Tellus mauris a diam maecenas sed enim ut sem viverra. Sociis natoque penatibus et magnis dis parturient montes nascetur. In vitae turpis mas.
+                        Ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet. Quis varius quam quisque
+                        id diam. Tellus mauris a diam maecenas sed enim ut sem viverra. Sociis natoque penatibus et
+                        magnis dis parturient montes nascetur. In vitae turpis mas.
                     </p>
                 </div>
             </div>
-    
+
             <div class="swiper-container-outer">
                 <div class="swiper news-swiper">
                     <div class="swiper-wrapper">
@@ -1589,7 +1620,8 @@
                                         <span class="news-date">Apr 2024</span>
                                     </div>
                                     <div class="news-content">
-                                        <p>Habitant morbi tristique senectus et netus et malesuada fames ac. Aenean et tortor at risus viverra adipiscing at in...</p>
+                                        <p>Habitant morbi tristique senectus et netus et malesuada fames ac. Aenean et
+                                            tortor at risus viverra adipiscing at in...</p>
                                     </div>
                                 </a>
                             </article>
@@ -1598,13 +1630,15 @@
                             <article class="news-item">
                                 <a href="#" class="news-link">
                                     <div class="news-image">
-                                        <img src="./img/Rectangle_81_1.png" alt="White sneaker floating on blue background">
+                                        <img src="./img/Rectangle_81_1.png"
+                                            alt="White sneaker floating on blue background">
                                     </div>
                                     <div class="news-meta">
                                         <span class="news-date">Mar 2024</span>
                                     </div>
                                     <div class="news-content">
-                                        <p>Cras ornare arcu dui vivamus arcu felis bibendum ut tristique. Dictum at tempor commodo ullamcorper. Mi sit amet...</p>
+                                        <p>Cras ornare arcu dui vivamus arcu felis bibendum ut tristique. Dictum at
+                                            tempor commodo ullamcorper. Mi sit amet...</p>
                                     </div>
                                 </a>
                             </article>
@@ -1613,13 +1647,15 @@
                             <article class="news-item">
                                 <a href="#" class="news-link">
                                     <div class="news-image">
-                                        <img src="./img/Rectangle_80_1.png" alt="Person wearing sneakers on pink background">
+                                        <img src="./img/Rectangle_80_1.png"
+                                            alt="Person wearing sneakers on pink background">
                                     </div>
                                     <div class="news-meta">
                                         <span class="news-date">Apr 2024</span>
                                     </div>
                                     <div class="news-content">
-                                        <p>Mauris augue neque gravida in. Habitant platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim...</p>
+                                        <p>Mauris augue neque gravida in. Habitant platea dictumst vestibulum rhoncus
+                                            est pellentesque elit ullamcorper dignissim...</p>
                                     </div>
                                 </a>
                             </article>
@@ -1634,22 +1670,23 @@
                                         <span class="news-date">Feb 2024</span>
                                     </div>
                                     <div class="news-content">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sapiente nemo hic asperiores optio sequi...</p>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sapiente
+                                            nemo hic asperiores optio sequi...</p>
                                     </div>
                                 </a>
                             </article>
                         </div>
                     </div>
                 </div>
-          
+
                 <div class="carousel-navigation-arrows">
-                     <button class="swiper-button-prev news-prev" aria-label="Previous News"></button>
-                     <button class="swiper-button-next news-next" aria-label="Next News"></button>
+                    <button class="swiper-button-prev news-prev" aria-label="Previous News"></button>
+                    <button class="swiper-button-next news-next" aria-label="Next News"></button>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <section class="features-bar">
         <div class="container">
             <div class="features-list">
@@ -1691,25 +1728,25 @@
             </a>
             <a href="YOUR_INSTAGRAM_LINK" target="_blank" rel="noopener noreferrer" class="gallery-item">
                 <img src="./img/shoe12.png" alt="Person jumping with shoes" class="gallery-image">
-                 <div class="instagram-overlay">
+                <div class="instagram-overlay">
                     <i class="fab fa-instagram"></i>
                 </div>
             </a>
             <a href="YOUR_INSTAGRAM_LINK" target="_blank" rel="noopener noreferrer" class="gallery-item">
                 <img src="./img/shoe25.png" alt="Person wearing white sneakers" class="gallery-image">
-                 <div class="instagram-overlay">
+                <div class="instagram-overlay">
                     <i class="fab fa-instagram"></i>
                 </div>
             </a>
-             <a href="YOUR_INSTAGRAM_LINK" target="_blank" rel="noopener noreferrer" class="gallery-item">
+            <a href="YOUR_INSTAGRAM_LINK" target="_blank" rel="noopener noreferrer" class="gallery-item">
                 <img src="./img/shoe07.1.png" alt="Runner on track" class="gallery-image">
-                 <div class="instagram-overlay">
+                <div class="instagram-overlay">
                     <i class="fab fa-instagram"></i>
                 </div>
             </a>
-             <a href="YOUR_INSTAGRAM_LINK" target="_blank" rel="noopener noreferrer" class="gallery-item">
+            <a href="YOUR_INSTAGRAM_LINK" target="_blank" rel="noopener noreferrer" class="gallery-item">
                 <img src="./img/shoe06.png" alt="Person sitting wearing sneakers" class="gallery-image">
-                 <div class="instagram-overlay">
+                <div class="instagram-overlay">
                     <i class="fab fa-instagram"></i>
                 </div>
             </a>
@@ -1737,7 +1774,7 @@
                         <li><a href="#" class="text-white text-decoration-none">Liên hệ</a></li>
                     </ul>
                 </div>
-                    <!-- Cột 3 -->
+                <!-- Cột 3 -->
                 <div class="col-6 col-md-2 mb-4">
                     <h6>Customer</h6>
                     <ul class="list-unstyled">
@@ -1747,7 +1784,7 @@
                         <li><a href="#" class="text-white text-decoration-none">Liên hệ</a></li>
                     </ul>
                 </div>
-                    <!-- Cột 4 -->
+                <!-- Cột 4 -->
                 <div class="col-6 col-md-4 mb-4">
                     <div class="map-responsive">
                         <iframe
@@ -1770,21 +1807,22 @@
         <hr class="border-light" />
         <div class=" small d-flex justify-content-evenly align-items-center">
             <div class="footer-title">
-            © 2025 HappyFeet. All rights reserved.</div>
-       <div class="payment-icons row row-cols-2 row-cols-md-4 g-3 justify-content-center text-center mx-0 px-0">
-  <div class="col">
-    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" class="img-fluid" />
-  </div>
-  <div class="col">
-    <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="MasterCard" class="img-fluid" />
-  </div>
-  <div class="col">
-    <img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal" class="img-fluid" />
-  </div>
-  <div class="col">
-    <img src="https://img.icons8.com/color/48/000000/amex.png" alt="Amex" class="img-fluid" />
-  </div>
-</div>
+                © 2025 HappyFeet. All rights reserved.</div>
+            <div class="payment-icons row row-cols-2 row-cols-md-4 g-3 justify-content-center text-center mx-0 px-0">
+                <div class="col">
+                    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" class="img-fluid" />
+                </div>
+                <div class="col">
+                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="MasterCard"
+                        class="img-fluid" />
+                </div>
+                <div class="col">
+                    <img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal" class="img-fluid" />
+                </div>
+                <div class="col">
+                    <img src="https://img.icons8.com/color/48/000000/amex.png" alt="Amex" class="img-fluid" />
+                </div>
+            </div>
 
 
         </div>
@@ -1820,6 +1858,7 @@
     </script>
 
     <script src="./JS/Style.js"></script>
+    <script src="./JS/Validate.js"></script>
 </body>
 
 </html>
