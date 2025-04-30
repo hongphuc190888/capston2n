@@ -82,7 +82,7 @@ button {
   transform: scale(1);
 }
 .detailProducts .detailProducts-left img {
-  width: 90%;
+  width: 100%;
 }
 .detailProducts .detailProducts-right {
   display: flex;

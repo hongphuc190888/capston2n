@@ -43,12 +43,14 @@
 
   .detailProducts-left {
     .detailProducts-left-item {
+      .slick-image {
+      }
       @include styleHoverImg(1);
     }
     margin-top: 10px;
 
     img {
-      width: 90%;
+      width: 100%;
     }
   }
   .detailProducts-right {
